@@ -8,6 +8,7 @@ PRIVATE
     paddle.c
     pong.c
     sounds.c
+    paddle_ia.c
 PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}/ball.h
     ${CMAKE_CURRENT_LIST_DIR}/fonts.h
@@ -15,6 +16,7 @@ PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}/paddle.h
     ${CMAKE_CURRENT_LIST_DIR}/pong.h
     ${CMAKE_CURRENT_LIST_DIR}/sounds.h
+    ${CMAKE_CURRENT_LIST_DIR}/paddle_ia.h
 )
 
 target_include_directories(src
