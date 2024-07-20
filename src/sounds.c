@@ -10,7 +10,7 @@
 
 #include <assert.h>
 
-#include <src/sounds.h>
+#include <sounds.h>
 
 void create_sounds(struct Sounds* sounds)
 {

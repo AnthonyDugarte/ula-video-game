@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include <src/hitbox.h>
+#include <hitbox.h>
 
 struct Ball
 {

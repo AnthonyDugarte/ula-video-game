@@ -14,8 +14,8 @@
 #include <allegro5/allegro_primitives.h>
 
 #include <settings.h>
-#include <src/fonts.h>
-#include <src/pong.h>
+#include <fonts.h>
+#include <pong.h>
 
 void init_pong(struct Pong* pong, struct Sounds* sounds)
 {

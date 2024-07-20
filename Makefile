@@ -1,6 +1,6 @@
 CC = clang
 
-INCLUDE = -I.
+INCLUDE = -I./src -I./settings
 
 SRC_DIR = src
 BUILD_DIR = build

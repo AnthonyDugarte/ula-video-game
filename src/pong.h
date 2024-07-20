@@ -9,9 +9,9 @@
     of the functions to init it, update it, and render it.
 */
 
-#include <src/paddle.h>
-#include <src/ball.h>
-#include <src/sounds.h>
+#include <paddle.h>
+#include <ball.h>
+#include <sounds.h>
 
 enum PongState
 {

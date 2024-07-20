@@ -13,9 +13,9 @@
 #include <allegro5/allegro_primitives.h>
 
 #include <settings.h>
-#include <src/fonts.h>
-#include <src/pong.h>
-#include <src/sounds.h>
+#include <fonts.h>
+#include <pong.h>
+#include <sounds.h>
 
 int main()
 {

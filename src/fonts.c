@@ -9,7 +9,7 @@
 */
 
 #include <settings.h>
-#include <src/fonts.h>
+#include <fonts.h>
 
 void create_fonts(struct Fonts* fonts)
 {

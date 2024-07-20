@@ -12,7 +12,7 @@
 #include <allegro5/allegro_primitives.h>
 
 #include <settings.h>
-#include <src/paddle.h>
+#include <paddle.h>
 
 void init_paddle(struct Paddle* paddle, float x, float y, float w, float h)
 {

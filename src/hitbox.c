@@ -9,7 +9,7 @@
     whether two hitboxs collide.
 */
 
-#include <src/hitbox.h>
+#include <hitbox.h>
 
 int collides(struct Hitbox hitbox1, struct Hitbox hitbox2)
 {
