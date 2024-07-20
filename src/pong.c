@@ -16,11 +16,12 @@
 #include <settings.h>
 #include <fonts.h>
 #include <pong.h>
+#include <paddle_ia.h>
 
 void init_pong(struct Pong* pong, struct Sounds* sounds)
 {
-    init_paddle(&pong->player1, PADDLE_X_OFFSET, PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT);
-    init_paddle(&pong->player2, TABLE_WIDTH - PADDLE_WIDTH - PADDLE_X_OFFSET, TABLE_HEIGHT - PADDLE_HEIGHT - PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT);
+    init_paddle(&pong->player1, PADDLE_X_OFFSET, PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT, 0);
+    init_paddle(&pong->player2, TABLE_WIDTH - PADDLE_WIDTH - PADDLE_X_OFFSET, TABLE_HEIGHT - PADDLE_HEIGHT - PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT, 1);
     init_ball(&pong->ball, TABLE_WIDTH / 2 - BALL_SIZE / 2, TABLE_HEIGHT / 2 - BALL_SIZE / 2, BALL_SIZE);
     pong->state = START;
     pong->player1_score = 0;
@@ -59,7 +60,8 @@ void handle_input_pong(struct Pong* pong, ALLEGRO_KEYBOARD_STATE* state)
     }
     else if (pong->state == PLAY)
     {
-        if (al_key_down(state, ALLEGRO_KEY_S))
+	if(!pong->player1.ia_controlled)
+        if ( al_key_down(state, ALLEGRO_KEY_S))
         {
             pong->player1.vy = PADDLE_SPEED;
         }
@@ -72,6 +74,7 @@ void handle_input_pong(struct Pong* pong, ALLEGRO_KEYBOARD_STATE* state)
             pong->player1.vy = 0;
         }
 
+	if(!pong->player2.ia_controlled)
         if (al_key_down(state, ALLEGRO_KEY_DOWN))
         {
             pong->player2.vy = PADDLE_SPEED;
@@ -203,6 +206,11 @@ void update_pong(struct Pong* pong, double dt)
             }
         }
     }
+
+    if(pong->player1.ia_controlled)
+        update_paddle_ia(&pong->player1, &pong->ball);
+    if(pong->player2.ia_controlled)
+        update_paddle_ia(&pong->player2, &pong->ball);
 }
 
 void render_pong(struct Pong pong, struct Fonts fonts)
