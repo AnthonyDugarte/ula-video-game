@@ -14,13 +14,14 @@
 #include <settings.h>
 #include <paddle.h>
 
-void init_paddle(struct Paddle* paddle, float x, float y, float w, float h)
+void init_paddle(struct Paddle* paddle, float x, float y, float w, float h, int ia_controlled)
 {
     paddle->x = x;
     paddle->y = y;
     paddle->width = w;
     paddle->height = h;
     paddle->vy = 0;
+    paddle->ia_controlled = ia_controlled;
 }
 
 void build_paddle_hitbox(struct Paddle paddle, struct Hitbox* hitbox)

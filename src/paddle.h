@@ -13,19 +13,20 @@
 
 #include <hitbox.h>
 
-struct Paddle
-{
-    float x;
-    float y;
-    float width;
-    float height;
-    float vy;
+struct Paddle {
+  float x;
+  float y;
+  float width;
+  float height;
+  float vy;
+
+  int ia_controlled;
 };
 
-void init_paddle(struct Paddle* paddle, float x, float y, float w, float h);
+void init_paddle(struct Paddle *paddle, float x, float y, float w, float h, int ia_controlled);
 
-void build_paddle_hitbox(struct Paddle paddle, struct Hitbox* hitbox);
+void build_paddle_hitbox(struct Paddle paddle, struct Hitbox *hitbox);
 
-void update_paddle(struct Paddle* paddle, float dt);
+void update_paddle(struct Paddle *paddle, float dt);
 
 void render_paddle(struct Paddle paddle);
