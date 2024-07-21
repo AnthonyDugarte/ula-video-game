@@ -21,7 +21,7 @@ make
 
 ## Changelog
 
-- 54047e2060b12fc5dae29a77b1ea5661c3b32a61 feat(pong): add ia handlers to both player
+- 54047e2 feat(pong): add ia handlers to both player
 - ecb363759efcab54b073e26a896ce0577e4eff01 feat(paddle_ia): add simple paddle ia handler
 - 4083d54f7eeb76238ac17922ad4240645061e1d3 feat(paddle): add ia controlled flag
 - 214a81aaf2cce2c53e8c1c7dd36dd8e903c68d15 feat(doc): README.md
