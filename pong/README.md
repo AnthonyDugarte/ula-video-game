@@ -21,10 +21,10 @@ make
 
 ## Changelog
 
-- 54047e2 feat(pong): add ia handlers to both player
-- ecb363759efcab54b073e26a896ce0577e4eff01 feat(paddle_ia): add simple paddle ia handler
-- 4083d54f7eeb76238ac17922ad4240645061e1d3 feat(paddle): add ia controlled flag
-- 214a81aaf2cce2c53e8c1c7dd36dd8e903c68d15 feat(doc): README.md
-- 8cb1e23e6d967ffea4c5b5e2eba3ac4f3fd7fa21 feat(build): add cmake
-- f30b88c8daf9ea44fe8b793d26d89ddbbd3b550c feat(build): prefer pkg-config
-- bb620b0057cf18d1dedd5be5f45b556b80e4e837 feat(build): avoid relative paths
+- [54047e](https://github.com/AnthonyDugarte/ula-video-game/commit/54047e2060b12fc5dae29a77b1ea5661c3b32a61) feat(pong): add ia handlers to both player
+- [ecb363](https://github.com/AnthonyDugarte/ula-video-game/commit/ecb363759efcab54b073e26a896ce0577e4eff01) feat(paddle_ia): add simple paddle ia handler
+- [4083d5](https://github.com/AnthonyDugarte/ula-video-game/commit/4083d54f7eeb76238ac17922ad4240645061e1d3) feat(paddle): add ia controlled flag
+- [214a81](https://github.com/AnthonyDugarte/ula-video-game/commit/214a81aaf2cce2c53e8c1c7dd36dd8e903c68d15) feat(doc): README.md
+- [8cb1e2](https://github.com/AnthonyDugarte/ula-video-game/commit/8cb1e23e6d967ffea4c5b5e2eba3ac4f3fd7fa21) feat(build): add cmake
+- [f30b88](https://github.com/AnthonyDugarte/ula-video-game/commit/f30b88c8daf9ea44fe8b793d26d89ddbbd3b550c) feat(build): prefer pkg-config
+- [bb620b](https://github.com/AnthonyDugarte/ula-video-game/commit/bb620b0057cf18d1dedd5be5f45b556b80e4e837) feat(build): avoid relative paths
