@@ -12,7 +12,7 @@ LIB_OBJS = $(BUILD_DIR)/*o
 main: $(BUILD_DIR) $(OBJ_RULES) main.cpp
 	$(CXX) $(INCLUDE) $@.cpp -o $@ $(LIBS) $(LIB_OBJS)
 
-Settings.o: Settings.cpp Settings.hpp
+Settings.o: settings/Settings.cpp settings/Settings.hpp
 	$(CXX) -c $(INCLUDE) $< -o $(BUILD_DIR)/$@ $(LIBS)
 
 text_utilities.o: $(BUILD_DIR) src/text_utilities.hpp src/text_utilities.cpp
