@@ -10,9 +10,9 @@
 
 #pragma once
 
-#include <src/Bird.hpp>
-#include <src/World.hpp>
-#include <src/states/BaseState.hpp>
+#include "Bird.hpp"
+#include "World.hpp"
+#include "BaseState.hpp"
 
 class PlayingState: public BaseState
 {

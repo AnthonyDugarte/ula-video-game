@@ -8,8 +8,8 @@
     This file contains the definition of the class World.
 */
 
-#include <Settings.hpp>
-#include <src/World.hpp>
+#include "Settings.hpp"
+#include "World.hpp"
 
 World::World(bool _generate_logs) noexcept
     : generate_logs{_generate_logs}, background{Settings::textures["background"]}, ground{Settings::textures["ground"]},

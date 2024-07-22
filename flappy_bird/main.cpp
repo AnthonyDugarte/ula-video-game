@@ -10,8 +10,8 @@
 
 #include <SFML/Window.hpp>
 
-#include <Settings.hpp>
-#include <src/Game.hpp>
+#include "Settings.hpp"
+#include "Game.hpp"
 
 int main()
 {

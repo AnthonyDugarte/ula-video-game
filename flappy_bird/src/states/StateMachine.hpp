@@ -15,7 +15,7 @@
 #include <string>
 #include <unordered_map>
 
-#include <src/states/BaseState.hpp>
+#include "BaseState.hpp"
 
 class StateMachine
 {

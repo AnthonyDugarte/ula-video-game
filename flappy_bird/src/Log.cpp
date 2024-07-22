@@ -8,8 +8,8 @@
     This file contains the definition of the class Log.
 */
 
-#include <Settings.hpp>
-#include <src/Log.hpp>
+#include "Settings.hpp"
+#include "Log.hpp"
 
 Log::Log(float _x, float _y, bool _inverted) noexcept
     : x{_x}, y{_y}, inverted{_inverted}, sprite{Settings::textures["Log"]}

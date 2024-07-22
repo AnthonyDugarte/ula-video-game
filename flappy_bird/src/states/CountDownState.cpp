@@ -8,10 +8,10 @@
     This file contains the definition of the class CountDownBaseState.
 */
 
-#include <Settings.hpp>
-#include <src/text_utilities.hpp>
-#include <src/states/CountDownState.hpp>
-#include <src/states/StateMachine.hpp>
+#include "Settings.hpp"
+#include "text_utilities.hpp"
+#include "CountDownState.hpp"
+#include "StateMachine.hpp"
 
 CountDownState::CountDownState(StateMachine* sm) noexcept
     : BaseState{sm}

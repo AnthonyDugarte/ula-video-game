@@ -10,7 +10,7 @@
 
 #include <stdexcept>
 
-#include <Settings.hpp>
+#include "Settings.hpp"
 
 const fs::path Settings::ASSETS_PATH{"assets"};
 

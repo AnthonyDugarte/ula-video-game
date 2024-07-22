@@ -1,6 +1,6 @@
 CXX = clang++ -std=c++17
 
-INCLUDE = -I.
+INCLUDE = -I./src -I./settings/ -I./src/states
 
 BUILD_DIR = build
 

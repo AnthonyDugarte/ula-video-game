@@ -16,8 +16,8 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <src/Factory.hpp>
-#include <src/LogPair.hpp>
+#include "Factory.hpp"
+#include "LogPair.hpp"
 
 class World
 {

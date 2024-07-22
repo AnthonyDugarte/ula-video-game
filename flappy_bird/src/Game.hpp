@@ -13,7 +13,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
-#include <src/states/StateMachine.hpp>
+#include "StateMachine.hpp"
 
 class Game
 {

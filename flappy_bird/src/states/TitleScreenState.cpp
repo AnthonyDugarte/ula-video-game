@@ -8,10 +8,10 @@
     This file contains the declaration of the class TitleScreenState.
 */
 
-#include <Settings.hpp>
-#include <src/text_utilities.hpp>
-#include <src/states/StateMachine.hpp>
-#include <src/states/TitleScreenState.hpp>
+#include "Settings.hpp"
+#include "text_utilities.hpp"
+#include "StateMachine.hpp"
+#include "TitleScreenState.hpp"
 
 TitleScreenState::TitleScreenState(StateMachine* sm) noexcept
     : BaseState{sm}, world{std::make_shared<World>(false)}

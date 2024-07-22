@@ -8,7 +8,7 @@
     This file contains the definition of the class StateMachine.
 */
 
-#include <src/states/StateMachine.hpp>
+#include "StateMachine.hpp"
 
 StateMachine::StateMachine(const std::initializer_list<std::pair<std::string, StateBuilder>>& init_states) noexcept
     : states{init_states.begin(), init_states.end()}

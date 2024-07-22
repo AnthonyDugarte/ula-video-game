@@ -8,10 +8,10 @@
     This file contains the definition of the class PlayingBaseState.
 */
 
-#include <Settings.hpp>
-#include <src/text_utilities.hpp>
-#include <src/states/StateMachine.hpp>
-#include <src/states/PlayingState.hpp>
+#include "Settings.hpp"
+#include "text_utilities.hpp"
+#include "StateMachine.hpp"
+#include "PlayingState.hpp"
 
 PlayingState::PlayingState(StateMachine* sm) noexcept
     : BaseState{sm}

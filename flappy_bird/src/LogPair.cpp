@@ -8,8 +8,8 @@
     This file contains the definition of the class LogPair.
 */
 
-#include <Settings.hpp>
-#include <src/LogPair.hpp>
+#include "Settings.hpp"
+#include "LogPair.hpp"
 
 LogPair::LogPair(float _x, float _y) noexcept
     : x{_x}, y{_y},

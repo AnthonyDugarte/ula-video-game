@@ -8,11 +8,11 @@
     This file contains the definition of the class Game.
 */
 
-#include <Settings.hpp>
-#include <src/Game.hpp>
-#include <src/states/CountDownState.hpp>
-#include <src/states/TitleScreenState.hpp>
-#include <src/states/PlayingState.hpp>
+#include "Settings.hpp"
+#include "Game.hpp"
+#include "CountDownState.hpp"
+#include "TitleScreenState.hpp"
+#include "PlayingState.hpp"
 
 Game::Game()
     : render_window{sf::VideoMode{Settings::WINDOW_WIDTH, Settings::WINDOW_HEIGHT}, "Flappy Bird", sf::Style::Close},

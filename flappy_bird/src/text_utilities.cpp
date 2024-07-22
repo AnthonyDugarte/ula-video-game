@@ -10,8 +10,8 @@
 
 #include <cmath>
 
-#include <Settings.hpp>
-#include <src/text_utilities.hpp>
+#include "Settings.hpp"
+#include "text_utilities.hpp"
 
 void center_text(sf::Text& text) noexcept
 {

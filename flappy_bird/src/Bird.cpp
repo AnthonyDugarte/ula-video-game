@@ -8,8 +8,8 @@
     This file contains the definition of the class Bird.
 */
 
-#include <Settings.hpp>
-#include <src/Bird.hpp>
+#include "Settings.hpp"
+#include "Bird.hpp"
 
 Bird::Bird(float _x, float _y, float w, float h) noexcept
     : x{_x}, y{_y}, width{w}, height{h}, vy{0.f}, sprite{Settings::textures["bird"]}

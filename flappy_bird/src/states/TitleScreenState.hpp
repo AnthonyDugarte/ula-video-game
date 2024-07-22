@@ -10,8 +10,8 @@
 
 #pragma once
 
-#include <src/World.hpp>
-#include <src/states/BaseState.hpp>
+#include "World.hpp"
+#include "BaseState.hpp"
 
 class TitleScreenState: public BaseState
 {

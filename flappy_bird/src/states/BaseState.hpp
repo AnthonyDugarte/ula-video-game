@@ -2,7 +2,7 @@
     ISPPJ1 2024
     Study Case: Flappy Bird
 
-    Author: Alejandro Mujica
+r   Author: Alejandro Mujica
     alejandro.j.mujic4@gmail.com
 
     This file contains the declaration of the class BaseState.
