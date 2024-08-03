@@ -22,8 +22,9 @@ PlayingState::PlayingState(StateMachine* sm) noexcept
 void PlayingState::enter(std::shared_ptr<World> _world, std::shared_ptr<Bird> _bird) noexcept
 {
     world = _world;
-    world->reset(true);
-    
+
+    world->soft_reset(true);
+
     if (_bird == nullptr)
     {
         bird = std::make_shared<Bird>(
@@ -62,7 +63,7 @@ void PlayingState::update(float dt) noexcept
 
     if (world->update_scored(bird->get_collision_rect()))
     {
-        ++score;
+        bird->inc_score(1);
         Settings::sounds["score"].play();
     }
 }
@@ -71,5 +72,5 @@ void PlayingState::render(sf::RenderTarget& target) const noexcept
 {
     world->render(target);
     bird->render(target);
-    render_text(target, 20, 10, "Score: " + std::to_string(score), Settings::FLAPPY_TEXT_SIZE, "flappy", sf::Color::White);
+    render_text(target, 20, 10, "Score: " + std::to_string(bird->get_score()), Settings::FLAPPY_TEXT_SIZE, "flappy", sf::Color::White);
 }

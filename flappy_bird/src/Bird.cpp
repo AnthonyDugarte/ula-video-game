@@ -8,8 +8,8 @@
     This file contains the definition of the class Bird.
 */
 
-#include "Settings.hpp"
 #include "Bird.hpp"
+#include "Settings.hpp"
 
 Bird::Bird(float _x, float _y, float w, float h) noexcept
     : x{_x}, y{_y}, width{w}, height{h}, vy{0.f}, sprite{Settings::textures["bird"]}
@@ -23,6 +23,7 @@ void Bird::reset(float _x, float _y) noexcept
     y = _y;
     vy = 0.f;
     sprite.setPosition(x, y);
+    score = 0;
 }
 
 sf::FloatRect Bird::get_collision_rect() const noexcept
@@ -56,4 +57,14 @@ void Bird::update(float dt) noexcept
 void Bird::render(sf::RenderTarget& target) const noexcept
 {
     target.draw(sprite);
+}
+
+void Bird::inc_score(int diff = 0) noexcept
+{
+    score += diff;
+}
+
+const int& Bird::get_score() noexcept
+{
+    return score;
 }

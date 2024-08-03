@@ -19,7 +19,7 @@ public:
 
     Bird(const Bird&) = delete;
 
-    Bird& operator = (Bird) = delete;
+    Bird& operator=(Bird) = delete;
 
     void reset(float _x, float _y) noexcept;
 
@@ -31,6 +31,9 @@ public:
 
     void render(sf::RenderTarget& target) const noexcept;
 
+    void inc_score(int diff) noexcept;
+    const int& get_score() noexcept;
+
 private:
     float x;
     float y;
@@ -39,4 +42,6 @@ private:
     float vy;
     sf::Sprite sprite;
     bool jumping{false};
+
+    int score{0};
 };
