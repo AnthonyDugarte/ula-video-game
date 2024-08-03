@@ -1,3 +1,7 @@
 IndentWidth: 4
 AccessModifierOffset: -4
-BreakBeforeBraces: Linux
+BreakBeforeBraces: Allman
+ColumnLimit: 200
+PointerAlignment: Left
+PackConstructorInitializers: NextLineOnly
+AllowShortFunctionsOnASingleLine: None
