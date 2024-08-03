@@ -40,7 +40,8 @@ void PlayingState::enter(std::shared_ptr<World> _world, std::shared_ptr<Bird> _b
 
 void PlayingState::handle_inputs(const sf::Event& event) noexcept
 {
-    if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+    if ((event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) ||
+        (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space))
     {
         bird->jump();
     }
