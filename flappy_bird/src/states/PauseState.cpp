@@ -39,6 +39,11 @@ void PauseState::handle_inputs(const sf::Event& event) noexcept
     {
         state_machine->change_state("playing", world, bird);
     }
+
+    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::R)
+    {
+        state_machine->change_state("count_down");
+    }
 }
 
 void PauseState::render(sf::RenderTarget& target) const noexcept
@@ -47,4 +52,6 @@ void PauseState::render(sf::RenderTarget& target) const noexcept
     bird->render(target);
 
     render_text(target, Settings::VIRTUAL_WIDTH / 2, Settings::VIRTUAL_HEIGHT / 2, "Paused", Settings::HUGE_TEXT_SIZE, "font", sf::Color::White, true);
+    render_text(target, Settings::VIRTUAL_WIDTH / 2, Settings::VIRTUAL_HEIGHT / 2 + Settings::VIRTUAL_HEIGHT / 4, "Press \"R\" to Restart the game",
+                Settings::MEDIUM_TEXT_SIZE, "font", sf::Color::White, true);
 }
