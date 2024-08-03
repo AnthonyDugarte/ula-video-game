@@ -8,22 +8,35 @@
     This file contains the definition of the class World.
 */
 
-#include "Settings.hpp"
 #include "World.hpp"
+#include "Settings.hpp"
 
 World::World(bool _generate_logs) noexcept
-    : generate_logs{_generate_logs}, background{Settings::textures["background"]}, ground{Settings::textures["ground"]},
-      logs{}, rng{std::default_random_engine{}()}
+    : generate_logs{_generate_logs},
+      background{Settings::textures["background"]},
+      ground{Settings::textures["ground"]},
+      logs{},
+      rng{std::default_random_engine{}()}
 {
     ground.setPosition(0, Settings::VIRTUAL_HEIGHT - Settings::GROUND_HEIGHT);
     std::uniform_int_distribution<int> dist(0, 80);
     last_log_y = -Settings::LOG_HEIGHT + dist(rng) + 20;
 }
 
+void World::soft_reset(bool _generate_logs) noexcept
+{
+    /**
+     * avoid reseting if the flag is the same
+     * this is intented to be used
+     */
+    if (_generate_logs != generate_logs)
+        reset(_generate_logs);
+}
+
 void World::reset(bool _generate_logs) noexcept
 {
     generate_logs = _generate_logs;
-    for (auto log_pair: logs)
+    for (auto log_pair : logs)
     {
         log_factory.remove(log_pair);
     }
@@ -36,8 +49,8 @@ bool World::collides(const sf::FloatRect& rect) const noexcept
     {
         return true;
     }
-    
-    for (auto log_pair: logs)
+
+    for (auto log_pair : logs)
     {
         if (log_pair->collides(rect))
         {
@@ -50,7 +63,7 @@ bool World::collides(const sf::FloatRect& rect) const noexcept
 
 bool World::update_scored(const sf::FloatRect& rect) noexcept
 {
-    for (auto log_pair: logs)
+    for (auto log_pair : logs)
     {
         if (log_pair->update_scored(rect))
         {
@@ -98,14 +111,13 @@ void World::update(float dt) noexcept
 
     ground.setPosition(ground_x, Settings::VIRTUAL_HEIGHT - Settings::GROUND_HEIGHT);
 
-    for (auto it = logs.begin(); it != logs.end(); )
+    for (auto it = logs.begin(); it != logs.end();)
     {
         if ((*it)->is_out_of_game())
         {
             auto log_pair = *it;
             log_factory.remove(log_pair);
             it = logs.erase(it);
-            
         }
         else
         {
@@ -119,7 +131,7 @@ void World::render(sf::RenderTarget& target) const noexcept
 {
     target.draw(background);
 
-    for (const auto& log_pair: logs)
+    for (const auto& log_pair : logs)
     {
         log_pair->render(target);
     }

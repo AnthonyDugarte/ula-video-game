@@ -26,9 +26,10 @@ public:
 
     World(const World& world) = delete;
 
-    World& operator = (World) = delete;
+    World& operator=(World) = delete;
 
     void reset(bool _generate_logs) noexcept;
+    void soft_reset(bool _generate_logs) noexcept;
 
     bool collides(const sf::FloatRect& rect) const noexcept;
 
@@ -37,6 +38,7 @@ public:
     void update(float dt) noexcept;
 
     void render(sf::RenderTarget& target) const noexcept;
+
 private:
     bool generate_logs;
 
