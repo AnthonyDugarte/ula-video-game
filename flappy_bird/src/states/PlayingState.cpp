@@ -27,15 +27,12 @@ void PlayingState::enter(std::shared_ptr<World> _world, std::shared_ptr<Bird> _b
 
     if (_bird == nullptr)
     {
-        bird = std::make_shared<Bird>(
-            Settings::VIRTUAL_WIDTH / 2 - Settings::BIRD_WIDTH / 2, Settings::VIRTUAL_HEIGHT / 2 - Settings::BIRD_HEIGHT / 2,
-            Settings::BIRD_WIDTH, Settings::BIRD_HEIGHT
-        );
+        bird = std::make_shared<Bird>(Settings::VIRTUAL_WIDTH / 2 - Settings::BIRD_WIDTH / 2, Settings::VIRTUAL_HEIGHT / 2 - Settings::BIRD_HEIGHT / 2,
+                                      Settings::BIRD_WIDTH, Settings::BIRD_HEIGHT);
     }
     else
     {
         bird = _bird;
-        bird->reset(Settings::VIRTUAL_WIDTH / 2 - Settings::BIRD_WIDTH / 2, Settings::VIRTUAL_HEIGHT / 2 - Settings::BIRD_HEIGHT / 2);
     }
 }
 
