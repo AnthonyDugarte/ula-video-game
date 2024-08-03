@@ -8,15 +8,16 @@
     This file contains the definition of the class PlayingBaseState.
 */
 
-#include "Settings.hpp"
-#include "text_utilities.hpp"
-#include "StateMachine.hpp"
 #include "PlayingState.hpp"
+#include "SFML/Window/Event.hpp"
+#include "SFML/Window/Keyboard.hpp"
+#include "Settings.hpp"
+#include "StateMachine.hpp"
+#include "text_utilities.hpp"
 
 PlayingState::PlayingState(StateMachine* sm) noexcept
     : BaseState{sm}
 {
-
 }
 
 void PlayingState::enter(std::shared_ptr<World> _world, std::shared_ptr<Bird> _bird) noexcept
@@ -38,10 +39,32 @@ void PlayingState::enter(std::shared_ptr<World> _world, std::shared_ptr<Bird> _b
 
 void PlayingState::handle_inputs(const sf::Event& event) noexcept
 {
-    if ((event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) ||
-        (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space))
+    switch (event.type)
     {
-        bird->jump();
+    case sf::Event::MouseButtonPressed:
+        switch (event.mouseButton.button)
+        {
+        case sf::Mouse::Left:
+            bird->jump();
+            break;
+        default:
+            break;
+        }
+        break;
+
+    case sf::Event::KeyPressed:
+        switch (event.key.code)
+        {
+        case sf::Keyboard::Space:
+            bird->jump();
+            break;
+        case sf::Keyboard::P:
+            state_machine->change_state("pause", world, bird);
+        default:
+            break;
+        }
+    default:
+        break;
     }
 }
 

@@ -8,6 +8,7 @@
     This file contains the definition of the class Game.
 */
 
+#include "PauseState.hpp"
 #include "Settings.hpp"
 #include "Game.hpp"
 #include "CountDownState.hpp"
@@ -21,7 +22,8 @@ Game::Game()
       state_machine{
         {"title", [](StateMachine* sm) { return std::make_shared<TitleScreenState>(sm); }},
         {"count_down", [](StateMachine* sm) { return std::make_shared<CountDownState>(sm); }},
-        {"playing", [](StateMachine* sm) { return std::make_shared<PlayingState>(sm); }}
+        {"playing", [](StateMachine* sm) { return std::make_shared<PlayingState>(sm); }},
+        {"pause", [](StateMachine* sm) { return std::make_shared<PauseState>(sm); }}
       }
 {
     render_texture.create(Settings::VIRTUAL_WIDTH, Settings::VIRTUAL_HEIGHT);
