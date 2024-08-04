@@ -42,7 +42,7 @@ void PauseState::handle_inputs(const sf::Event& event) noexcept
 
     if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::R)
     {
-        state_machine->change_state("count_down");
+        state_machine->change_state("count_down", world);
     }
 }
 

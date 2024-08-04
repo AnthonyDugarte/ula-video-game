@@ -8,25 +8,25 @@
     This file contains the definition of the class CountDownBaseState.
 */
 
-#include "Settings.hpp"
-#include "text_utilities.hpp"
 #include "CountDownState.hpp"
+#include "Settings.hpp"
 #include "StateMachine.hpp"
+#include "text_utilities.hpp"
 
 CountDownState::CountDownState(StateMachine* sm) noexcept
     : BaseState{sm}
 {
-
 }
 
 void CountDownState::enter(std::shared_ptr<World> _world, std::shared_ptr<Bird> _bird) noexcept
 {
-    if (world == nullptr)
+    if (_world == nullptr)
     {
         world = std::make_shared<World>(false);
     }
     else
     {
+        world = _world;
         world->reset(false);
     }
 
@@ -55,5 +55,6 @@ void CountDownState::update(float dt) noexcept
 void CountDownState::render(sf::RenderTarget& target) const noexcept
 {
     world->render(target);
-    render_text(target, Settings::VIRTUAL_WIDTH / 2, Settings::VIRTUAL_HEIGHT / 2, std::to_string(counter), Settings::HUGE_TEXT_SIZE, "font", sf::Color::White, true);
+    render_text(target, Settings::VIRTUAL_WIDTH / 2, Settings::VIRTUAL_HEIGHT / 2, std::to_string(counter), Settings::HUGE_TEXT_SIZE, "font", sf::Color::White,
+                true);
 }
