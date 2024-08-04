@@ -44,7 +44,7 @@ void CountDownState::update(float dt) noexcept
 
         if (counter == 0)
         {
-            state_machine->change_state("playing", world, bird);
+            state_machine->change_state("playing", world);
             return;
         }
     }
